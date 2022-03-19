@@ -35,12 +35,7 @@ module.exports = {
 					name: 'Members:',
 					value: `Total: **${message.guild.memberCount}**\n Online: **${message.guild.members.cache.filter(m => m.presence.status === 'online').size}** `,
 					inline: true,
-				},
-				{
-					name: 'Region:',
-					value: `${message.guild.region.toUpperCase()}`,
-					inline: true,
-				},
+				}
 			],
 		};
 
