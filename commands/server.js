@@ -4,7 +4,7 @@ module.exports = {
 	description: 'Shows server name',
 	// eslint-disable-next-line no-unused-vars
 	execute(message, args) {
-		const serverembed = {
+		const embed = {
 			color: 13238363,
 			author: {
 				name: `${message.guild.name}`,
@@ -40,6 +40,6 @@ module.exports = {
 		};
 
 
-		message.channel.send({ embed: serverembed });
+		message.channel.send({ embed: embed });
 	},
 };

@@ -3,7 +3,8 @@ const fs = require('fs');
 // require the discord.js module
 const Discord = require('discord.js');
 // grab config from config.json file
-const { prefix, token } = require('./config.json');
+const { prefix } = require('./config.json');
+const token = process.env.token
 
 // create a new Discord client
 const client = new Discord.Client();

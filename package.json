@@ -1,13 +1,7 @@
 {
 	"name": "duh",
-	"version": "1.0.0",
-	"description": "discord bot",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"author": "xBiei",
-	"license": "ISC",
 	"dependencies": {
 		"discord.js": "^12.3.1",
 		"timeago.js": "^4.0.2"

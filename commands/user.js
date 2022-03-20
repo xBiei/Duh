@@ -1,17 +1,17 @@
 const { format } = require('timeago.js');
 module.exports = {
-	name: 'whoami',
-	description: 'Shows info about you!',
-	// eslint-disable-next-line no-unused-vars
+	name: 'user',
+	description: 'Shows info about the user!',
 	execute(message, args) {
 
-		const whoamiembed = {
-			title: 'Your Profile:',
+	const user = args.length != 0 ? message.mentions.users.first() : message.author
+    const embed = {
+			title: 'Profile:',
 			color: 13238363,
 			fields: [
 				{
-					name: 'You Are:',
-					value: `<@${message.author.id}>`,
+					name: 'User:',
+					value: `<@${user.id}>`,
 					inline: true,
 				},
 				{
@@ -21,12 +21,12 @@ module.exports = {
 				},
 				{
 					name: 'Joined Discord:',
-					value: `${message.author.createdAt.toLocaleString()}\n **${format(`${message.author.createdTimestamp}`)}**`,
+					value: `${user.createdAt.toLocaleString()}\n **${format(`${user.createdTimestamp}`)}**`,
 					inline: true,
 				},
 				{
 					name: 'ID:',
-					value: `${message.author.id}`,
+					value: `${user.id}`,
 					inline: true,
 				},
 				{
@@ -41,12 +41,12 @@ module.exports = {
 				},
 			],
 			thumbnail: {
-				url: `${message.author.displayAvatarURL({ size: 1024, dynamic: true, format: 'png' })}`,
+				url: `${user.displayAvatarURL({ size: 1024, dynamic: true, format: 'png' })}`,
 			},
 		};
 
 
-		message.channel.send({ embed: whoamiembed });
+		message.channel.send({ embed: embed });
 		// message.reply(`\nYou are: [**${message.author.username} #${message.author.discriminator}**]\nYour user ID is: [**${message.author.id}**]\nYour account was created at: [**${message.author.createdAt}**]\n and this is your avatar: ${message.author.displayAvatarURL({ size: 1024, dynamic: true, format: "png" })}`);
 	},
 };
