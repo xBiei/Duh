@@ -1,0 +1,17 @@
+name: 🚀 Deploy website on push
+on: push
+jobs:
+  build:
+    name: 🎉 Deploy
+    runs-on: self-hosted
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      name: NPM Version 16
+      with:
+        node-version: '16'
+    - name: 🔧 Install latest modules
+      run: yarn
+    - name: 🔁Restart the bot
+      run: pm2 restart "duh"
