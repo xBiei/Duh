@@ -13,5 +13,7 @@ jobs:
         node-version: '16'
     - name: 🔧 Install latest modules
       run: yarn
+    - name: 🔁 Set the token
+      run: cp /home/xbiei/config.bak /home/xbiei/duh/duh/Duh/Duh/config.json
     - name: 🔁Restart the bot
       run: pm2 restart "duh"
